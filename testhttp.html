@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <meta name="viewport" content="width=device-width,user-scalable=no">
+        <link rel="stylesheet" href="/css/new.css">  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>      
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaf2IOQErPJ0EdqPLFFN19W0n670R3El4&libraries=places"></script>        
+    </head>
+    <body ng-app="app">                
+        <div id="main" ng-controller="findPlaces">                        
+            <button ng-click="callMe()">Click me</button>
+        </div>     
+        <script>    
+            var app = angular.module('app',[]);         
+            app.controller('findPlaces',function($scope,$http){                
+                $scope.callMe=function(){
+                    //metodo 1
+                    // $http({
+                    //     'method':'post',
+                    //     'url':'http://localhost:90/server.php',
+                    //     'content-type':'application/x-www-form-urlencoded',
+                    //     'data':{'cmd':'test','some':'prova'}
+                    // }).then(function(data){
+                    //     console.log(data);
+                    // });
+                    //metodo 2
+                    let data1 = {'cmd':'test','some':'prova'};
+                    $http.post(                    
+                        'http://localhost:90/server.php',                        
+                        data1,
+                        {'headers':{'content-type':'application/x-www-form-urlencoded'}},
+                    ).then(function(data){
+                         console.log(data.data);
+                    });
+                    //old one!
+                    $.post('http://localhost:90/server.php',data1,function(data){
+                        console.log(data);
+                    });
+                }
+            });            
+        </script>
+        <!-- <script>
+            function loadElements(){
+                $.ajax('localhost:90/bandicotApi',{
+                    'cmd':'giveMeStoredLoc'
+                },function(data){
+                    
+                });
+            }
+            function addElement(){
+                
+            }
+            function typeCheck(){
+
+            }                 
+        </script> -->
+    </body>
+</html>
