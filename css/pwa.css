@@ -1,0 +1,16 @@
+#searchdir{
+    height: 200pt;
+    background-color: rgb(200,215,0);
+}
+#news{
+    min-height: 400pt;
+    background-color: rgba(200,215,0,0.1);
+}
+#bottommenu{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 50pt;
+    background-color: rgba(200,215,0,0.5);
+}

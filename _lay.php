@@ -5,20 +5,21 @@
     $url = implode('/',$urlArr);
     //$myvl = explode('?',$url)[0];
     $myvl = explode('.',$url)[0];
-    $myvl = ($myvl=='' ?'index':$myvl);    
+    $myvl = ($myvl=='' ?'index':$myvl);
     if ($myvl=='server'){
         include('server.php');
     } else {
         $myvl = ($myvl=='_lay' || $myvl=='_lay.php'?'error':$myvl);          
-        $myvl = (!empty($_SESSION["user"]) || $myvl == "error" ?$myvl:"login");
-        //verify of test
-        echo $myvl."\r\n";
+        //$myvl = (!empty($_SESSION["user"]) || $myvl == "error" ? $myvl:"login");
+        //if set head will be repeated...
+        //echo $myvl."\r\n";
+        $parts = [];
 ?><html>
-    <?php include('head.php'); ?>
+    <?php require_once('head.php'); ?>
     <?php //include('sidebar.php'); ?>
     <?php //include('alertsystem.php'); ?>    
     <body>
-    <?php include($myvl . '.php'); ?>
+    <?php require_once($myvl . '.php'); ?>
     </body>
 </html>
 <?php } ?>
