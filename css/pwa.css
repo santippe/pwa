@@ -14,3 +14,15 @@
     height: 50pt;
     background-color: rgba(200,215,0,0.5);
 }
+#searchtxt{
+    position: absolute;
+    top: 100pt;    
+    width: 80pt;
+    margin: auto;
+    margin-top: -8pt;
+    border: none;
+    display: block;
+    height: 16pt;
+    padding: 0pt;
+    line-height: 16pt;
+}
