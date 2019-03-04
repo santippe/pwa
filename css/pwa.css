@@ -1,5 +1,6 @@
 #searchdir{
     height: 200pt;
+    position: relative;
     background-color: rgb(200,215,0);
 }
 #news{
@@ -16,13 +17,41 @@
 }
 #searchtxt{
     position: absolute;
-    top: 100pt;    
-    width: 80pt;
-    margin: auto;
-    margin-top: -8pt;
+    top: 50%;
+    width: 120pt;
+    left: 50%;;
     border: none;
     display: block;
     height: 16pt;
-    padding: 0pt;
+    margin-top: -8pt;
+    margin-left: -60pt;
+    padding: 3pt;
+    box-sizing: border-box;
     line-height: 16pt;
+    background-color: #eee;
+    border-radius: 3px;
+}
+#searchhelp{
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    width: 120pt;
+    left: 50%;;
+    border: none;
+    display: none;
+    margin-top: 14pt;
+    margin-left: -60pt;    
+    box-sizing: border-box;
+    line-height: 16pt;    
+    border-radius: 3px;
+    background-color: #eee;
+    box-shadow: 0px 5pt 10pt #555;
+}
+#searchhelp>div{
+    transition: backgroundColor 1s;
+    padding: 3px;    
+}
+#searchhelp>div:hover{
+    background-color: burlywood;
+    font-weight: bold;
 }
