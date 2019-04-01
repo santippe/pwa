@@ -5,7 +5,7 @@
     $url = implode('/',$urlArr);
     //$myvl = explode('?',$url)[0];
     $myvl = explode('.',$url)[0];
-    $myvl = ($myvl=='' ?'index':$myvl);
+    $myvl = ($myvl=='' ?'index':$myvl);    
     if ($myvl=='server'){
         include('server.php');
     } else {
@@ -18,7 +18,7 @@
     <?php require_once('head.php'); ?>
     <?php //include('sidebar.php'); ?>
     <?php //include('alertsystem.php'); ?>    
-    <body>
+    <body>    
     <?php require_once($myvl . '.php'); ?>
     </body>
 </html>

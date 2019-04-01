@@ -34,11 +34,9 @@
                             // }
                             // print(json_encode($_resOfQuery));
                         }                
-                };
-                if ($cmd == 'logout'){
+                } else if ($cmd == 'logout'){
                     unset($_SESSION["user"]);
-                }
-                if ($cmd == 'addVote'){
+                } else if ($cmd == 'addVote'){
                     if (!empty($_SESSION['user'])){
                         $req_data = $_REQUEST['place'];   
                         // $_db = new SQLite3("data/my.db");
@@ -54,9 +52,11 @@
                         //     print(json_encode($_resOfQuery));
                         // }                
                     }                    
-                }
-                if($cmd == 'test'){
+                } else if($cmd == 'test'){
+
                     //print(array_keys($_REQUEST));
+                } else if ($cmd == 'giveMeTips'){
+                    
                 }
             }
         }
