@@ -1,9 +1,9 @@
 <div id="searchdir">
     <input type="text" id="searchtxt">
     <div id="searchhelp">
-        <div>Test 1</div>
-        <div>Test 2</div>
-        <div>Test 3</div>
+        <a href="/">Test 1</a>
+        <a>Test 2</a>
+        <a>Test 3</a>
     </div>
 </div>
 <div id="news"></div>
