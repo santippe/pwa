@@ -4,7 +4,7 @@
     "prefer_related_applications":false,
     "icons": [
       {
-        "src": "/images/icon192.png",
+        "src": "/images/ico192.png",
         "type": "image/png",
         "sizes": "192x192"
       },
