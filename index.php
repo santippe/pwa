@@ -8,6 +8,7 @@
 </div>
 <div id="news"></div>
 <div id="bottommenu"></div>
+<div class="boticons" style="right:10pt"></div>
 <script>
     let searchBox = document.querySelector('#searchtxt');
     searchBox.addEventListener('click', () => {
@@ -37,3 +38,12 @@
         xhr.send(fm1);
     }
 </script> 
+<script>
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+        // Prevent Chrome 67 and earlier from automatically showing the prompt
+        e.preventDefault();
+        // Stash the event so it can be triggered later.
+        deferredPrompt = e;
+    });
+</script>

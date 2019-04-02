@@ -21,13 +21,14 @@
         //$myvl = (!empty($_SESSION["user"]) || $myvl == "error" ? $myvl:"login");
         //if set head will be repeated...
         //echo $myvl."\r\n";
+        $myvl = $myvl == '/' ? 'index' : '';
         $parts = [];
 ?><html>
     <?php require_once('head.php'); ?>
     <?php //include('sidebar.php'); ?>
     <?php //include('alertsystem.php'); ?>    
     <body>
-    <?php require_once($myvl . '.php'. (!$queryString ? '?' . $queryString : '')); ?>
+    <?php require_once($myvl . '.php'. ($queryString !== null ? '?' . $queryString : '')); ?>
     </body>
 </html>
 <?php } ?>
