@@ -12,7 +12,7 @@
 </div>
 <div id="news" style="display: flex">
     <?php $file_count = 1; foreach($filesImgs as $key=>$keyval) {?>
-        <div class="card"><div class="cardbckg" style="background-image: url('/newsimage/<?= $keyval ?>')"></div><table><tr><td>Title <?= $file_count ?></td></tr></table></div>
+        <div class="card" oncontextmenu="return false;"><div class="cardbckg" style="background-image: url('/newsimage/<?= $keyval ?>')"></div><table><tr><td>Title <?= $file_count ?></td></tr></table></div>
     <?php $file_count++; } ?>    
 </div>
 <div id="bottommenu"></div>
