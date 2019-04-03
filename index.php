@@ -1,3 +1,7 @@
+<?php 
+    //get all files 
+    $filesImgs = array_slice(scandir('newsimage'),2);
+?>
 <div id="searchdir">
     <input type="text" id="searchtxt">
     <div id="searchhelp">
@@ -6,7 +10,11 @@
         <a>Test 3</a>
     </div>
 </div>
-<div id="news"></div>
+<div id="news" style="display: flex">
+    <?php $file_count = 1; foreach($filesImgs as $key=>$keyval) {?>
+        <div class="card"><div class="cardbckg" style="background-image: url('/newsimage/<?= $keyval ?>')"></div><table><tr><td>Title <?= $file_count ?></td></tr></table></div>
+    <?php $file_count++; } ?>    
+</div>
 <div id="bottommenu"></div>
 <div class="boticons" style="right:10pt"></div>
 <script>
@@ -42,9 +50,9 @@
     let deferredPrompt;
     window.addEventListener('beforeinstallprompt', (e) => {
         // Prevent Chrome 67 and earlier from automatically showing the prompt
-        e.preventDefault();
+        //e.preventDefault();
         // Stash the event so it can be triggered later.
-        deferredPrompt = e;
-        alert('fire!');
+        //deferredPrompt = e;
+        //alert('fire!');
     });
 </script>

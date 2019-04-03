@@ -8,10 +8,6 @@ a{
     color: inherit;
     text-decoration: none;
 }
-#news{
-    min-height: 400pt;
-    background-color: rgba(200,215,0,0.1);
-}
 #bottommenu{
     position: fixed;
     bottom: 0px;
@@ -70,4 +66,41 @@ a{
     background-color: #555;
     bottom: 10pt;
     right: 10pt;
+}
+#news{    
+    background-color: rgba(200,215,0,0.1);
+    box-sizing: border-box;
+    padding: 10pt 0pt 50pt 10pt;
+    flex-wrap : wrap;
+    min-height: calc(100% - 150pt);    
+}
+.card{
+    width: calc(50% - 10pt);    
+    margin-right: 10pt;
+    margin-bottom: 10pt;
+    height: 100pt;    
+    position: relative;
+    color: #eee;    
+}
+.card *{
+    font-family: 'Oswald', sans-serif;
+}
+.cardbckg{
+    background-size: cover;
+    background-position: center center;
+    filter: blur(2pt);
+    background-color: rgb(202, 157, 97);
+    position: absolute;
+    left: 0px;right: 0px;top: 0px;bottom: 0px;
+    z-index: -1;
+}
+.card table{
+    width: 100%;
+    height: 100%;
+    color: #eee;  
+    background-color: rgba(0,0,0,0.3);
+}
+.card td{
+    vertical-align:middle;
+    text-align: center;
 }
