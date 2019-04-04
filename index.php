@@ -46,8 +46,7 @@
         xhr.send(fm1);
     }
 </script> 
-<script>
-    let deferredPrompt;
+<script>    
     window.addEventListener('beforeinstallprompt', (e) => {
         // Prevent Chrome 67 and earlier from automatically showing the prompt
         //e.preventDefault();
