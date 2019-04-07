@@ -1,8 +1,11 @@
+#rewrite engine to test
+#dio porco
 RewriteEngine on
 #RewriteRule ^(.+)$ $1 [NC]
 #RewriteRule ^(_lay\.[^\.]*)$ error.html [NC]
-RewriteRule ^([^\.]*)$ _lay.php [NC]
-RewriteRule ^([^\.]*\.php)$ _lay.php [NC]
+RewriteRule ^([^\.\?]*(\.php)?)$ _lay.php [NC]
+#RewriteRule ^(.*\.php)$ test/att1.html [NC]
+#RewriteRule ^([^\.\?]*\.php(\?.*)?)$ test/att2.php [NC]
 #RewriteRule ^([^\.]*\.[^\.]*)$ _lay.php [NC]
 #RewriteRule ^(_lay\.[^\.]*)$ _lay.php [NC]
 #RewriteRule ^(_lay\.[^\.]*)$ $0 [NC]

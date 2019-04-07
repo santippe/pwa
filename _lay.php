@@ -1,7 +1,7 @@
 <?php
     session_start(); 
     $url = $_SERVER["REQUEST_URI"];
-    //$myvl = explode('?',explode('/',$url)[1])[0];
+    $checkPath = explode('/',$url)[1];
     $urlArr = explode('?',substr($url,1));
     $myvl = $urlArr[0];
     $pars = (count($urlArr) > 1 ? $urlArr[1] : '');
@@ -14,7 +14,8 @@
 ?>
 <?php require_once('code.php'); ?>
 <?php 
-    if ($myvl!='server' && $myvl !='test' && $myvl!='testmail' && $myvl != 'mappone' && $_REQUEST["mail"]!="mail" && $myvl != "menu") {
+    if ($myvl!='server' && $myvl !='test' && $myvl!='testmail' && $myvl != 'mappone' && $_REQUEST["mail"]!="mail" 
+        && $myvl != "menu" && $checkPath != 'templates') {
         //echo $_REQUEST["mail"]!="mail";
 ?>
 <html>
@@ -36,4 +37,6 @@
         </script>
     </body>    
 </html>
-<?php } else require_once($myvl . '.php' . ($pars != '' ? '?' . $pars : '')); ?>    
+<?php } else {
+    require_once($myvl . '.php'); 
+}?>    
